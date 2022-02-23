@@ -1,0 +1,31 @@
+<br>
+<table>
+    <tr>
+        <td>Enter Name</td>
+        <td>:</td>
+        <td><input type="text" [(ngModel)]="StudentName" /></td>
+    </tr>
+    <br>
+    <tr> 
+        <td>Enter Roll Number</td>
+        <td>:</td>
+        <td><input type="text" [(ngModel)]="RollNumber" /></td>
+    </tr>
+    <br>
+    <tr>
+        <td colspan="3" align="center" *ngIf="SelectedStudent===null"><input type="button" value="Add Student" 
+            (click)="AddStudent()"   /></td>
+        <td colspan="3" align="center" *ngIf="SelectedStudent!==null"><input type="button" value="Edit Student" 
+            (click)="EditStudent()"  /></td>
+    </tr>
+</table>
+<br>
+
+<table class="table table-bordered">
+    <tr *ngFor="let stu of StudentArray; let i = index" >
+        <td>{{ stu.name }}</td>
+        <td>{{ stu.rollNO }}</td>
+        <td><input type="button" (click)="selectStudent(i)" class="btn btn-warning" value="Edit" /></td>
+        <td><input type="button" (click)="deleteStudent(i)" class="btn btn-danger" value="Delete" /></td>
+    </tr>
+</table>

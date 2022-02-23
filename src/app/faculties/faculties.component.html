@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-md-3 card" *ngFor="let fac of faculties">
+      <img class="card-img-top" src="{{ fac.FacultyImage }}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ fac.FacultyName }}</h5>
+        <p class="card-text">{{ fac.FacultyDesignation }}</p>
+        <a href="#" class="btn btn-primary" (click)="detailFaculty(fac.FacultyID)">View More</a>
+      </div>
+    </div>
+</div>
